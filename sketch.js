@@ -1,13 +1,13 @@
 var x; // Start by creating a variable called x, this value needs to change every frame
 var y;
 
-let width = 300;
+let width = 1000;
 let score = 0;
 let gameover = false;
 let win = false;
 
 function setup() {
-  createCanvas(300, 300);
+  createCanvas(1000, 1000);
   background(220);
   x = 0; // Start at the left edge of the canvas
   y = 60;
