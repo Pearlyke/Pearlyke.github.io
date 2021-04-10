@@ -17,7 +17,7 @@ function init() {
 }
 
 function setup() {
-  createCanvas(300, 300);
+  createCanvas(width, width);
   background(220);
   init();
 }
