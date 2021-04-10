@@ -5,12 +5,13 @@ let width = 500;
 let score = 0;
 let gameover = false;
 let win = false;
+let racquet_height = 50;
 
 function init() {
   x = 0; // Start at the left edge of the canvas
   y = 60;
-  xspeed = 10;
-  yspeed = 3;
+  xspeed = 7.5;
+  yspeed = 4;
   score = 0;
   win = false;
   gameover = false;  
@@ -24,7 +25,7 @@ function setup() {
 
 function draw() {
   frameRate(30);
-  if (score>3) {
+  if (score>=5) {
     win = true;
   }
   if (win) {
@@ -71,7 +72,7 @@ function draw() {
   ellipse(x, y, 20, 20);
 //  fill(255);
 //  text(yspeed, 10, 30);
-  rect(width - 20,mouseY,10,50);
+  rect(width - 20,mouseY-(racquet_height/2),10,50);
   
   if (gameover) {
     if (mouseIsPressed) {
@@ -87,9 +88,9 @@ function draw() {
     }
   }
   else {
-    textSize(10);
-    text('HIGH SCORE: ',20,20);
-    text(score,110,20); 
+    textSize(30);
+    text('HIGH SCORE: ',20,30);
+    text(score,250,30); 
   }
     if (win) {
           textSize(30);
@@ -104,7 +105,7 @@ function draw() {
 function ellipseMeetsRectangle(x,y) {
 
   
-  if (abs(x-(width - 20))<10 && (abs(y-mouseY)<50)) {
+  if (abs(x-(width - 20))<10 && (abs(y-mouseY)<racquet_height/2)) {
     return true;
   }
   else {
