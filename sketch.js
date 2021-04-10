@@ -1,19 +1,25 @@
 var x; // Start by creating a variable called x, this value needs to change every frame
 var y;
 
-let width = 500;
+let width = 300;
 let score = 0;
 let gameover = false;
 let win = false;
 
-function setup() {
-  createCanvas(width, width);
-  background(220);
+function init() {
   x = 0; // Start at the left edge of the canvas
   y = 60;
   xspeed = 10;
   yspeed = 3;
-  
+  score = 0;
+  win = false;
+  gameover = false;  
+}
+
+function setup() {
+  createCanvas(300, 300);
+  background(220);
+  init();
 }
 
 function draw() {
@@ -65,15 +71,25 @@ function draw() {
   ellipse(x, y, 20, 20);
 //  fill(255);
 //  text(yspeed, 10, 30);
-  rect(width-20,mouseY,10,50);
+  rect(280,mouseY,10,50);
   
   if (gameover) {
+    if (mouseIsPressed) {
+      init();  
+    }
+    else {
     textSize(30);
     text("GAME OVER!",20,200);
     fill('red')
     text('HIGH SCORE: ',20,50);
     text(score,110,90);
-
+    text('tap to play again',20,250)
+    }
+  }
+  else {
+    textSize(10);
+    text('HIGH SCORE: ',20,20);
+    text(score,110,20); 
   }
     if (win) {
           textSize(30);
@@ -81,15 +97,14 @@ function draw() {
 //          background('blue');
 
     }
-    textSize(10);
-    text('HIGH SCORE: ',20,20);
-    text(score,110,20);
+      
+    
 }
 
 function ellipseMeetsRectangle(x,y) {
 
   
-  if (abs(x-(width-20))<10 && (abs(y-mouseY)<50)) {
+  if (abs(x-280)<10 && (abs(y-mouseY)<50)) {
     return true;
   }
   else {
