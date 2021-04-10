@@ -45,7 +45,7 @@ function draw() {
       }
   if (x < 10){
       x = 10;
-      xspeed *= -0.5 ;
+      xspeed *= -1 ;
       }
   
   	if (y > width-10){
