@@ -1,7 +1,7 @@
 var x; // Start by creating a variable called x, this value needs to change every frame
 var y;
 
-let width = 300;
+let width = 500;
 let score = 0;
 let gameover = false;
 let win = false;
@@ -71,7 +71,7 @@ function draw() {
   ellipse(x, y, 20, 20);
 //  fill(255);
 //  text(yspeed, 10, 30);
-  rect(280,mouseY,10,50);
+  rect(width - 20,mouseY,10,50);
   
   if (gameover) {
     if (mouseIsPressed) {
@@ -104,7 +104,7 @@ function draw() {
 function ellipseMeetsRectangle(x,y) {
 
   
-  if (abs(x-280)<10 && (abs(y-mouseY)<50)) {
+  if (abs(x-(width - 20))<10 && (abs(y-mouseY)<50)) {
     return true;
   }
   else {
