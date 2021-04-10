@@ -60,8 +60,8 @@ function draw() {
       }
   
   if (ellipseMeetsRectangle(x,y)) {
-    xspeed = -2*abs(xspeed);
-    yspeed *= 1.25;
+    xspeed = -1.10*abs(xspeed);
+    yspeed *= 1.10;
     text('ÜTKÖZÉS!!!',20,20);
     score = score+1;
   }
