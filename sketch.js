@@ -82,14 +82,14 @@ function draw() {
     textSize(30);
     text("GAME OVER!",20,200);
     fill('red')
-    text('HIGH SCORE: ',20,50);
+    text('SCORE: ',20,50);
     text(score,110,90);
     text('tap to play again',20,250)
     }
   }
   else {
     textSize(30);
-    text('HIGH SCORE: ',20,30);
+    text('SCORE: ',20,30);
     text(score,250,30); 
   }
     if (win) {
