@@ -8,7 +8,7 @@ let win = false;
 let racquet_height = 50;
 
 function init() {
-  x = 0; // Start at the left edge of the canvas
+  x = 20; // Start at the left edge of the canvas
   y = 60;
   xspeed = 7.5;
   yspeed = 4;
@@ -32,7 +32,7 @@ function draw() {
     background(0,255,0);
   }
   else {
-    background('blue');
+    background(255,0,0);
   }
   fill(255);
   x = x + xspeed; // Move slightly to the right every frame by
